@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Title="MainWindow" Height="360" Width="360">
     <Grid>
         <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
 
             <Button Name="btnAdd" Grid.Column="0" Width="40" HorizontalAlignment="Left" Background="Transparent" Content="+" 
                     FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnAdd_Click"/>
-            <Button Name="btnCalendar" Grid.Column="0" Width="40" HorizontalAlignment="Left" Background="Transparent" Content="+" 
+            <Button Name="btnCalendar" Grid.Column="1" Width="40" HorizontalAlignment="Left" Background="Transparent" Content="Cal" 
                     FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnCalendar_Click"/>
             <Button Name="btnExit" Grid.Column="8" Width="40" HorizontalAlignment="Right" Background="Transparent" Content="x" 
                     FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnExit_Click"/>
@@ -35,9 +35,23 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <StackPanel>
-                
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="Today" FontSize="20"/>
+
+            <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" SelectedItem ="{Binding SelectedItem}" CanUserAddRows="False"
+                      CanUserDeleteRows="False" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="4*"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="2*"/>
+                    <DataGridTextColumn Header="Priority" Binding="{Binding Prioritye}" Width="2*"/>
+                    <DataGridTextColumn Header="is done?" Binding="{Binding is_done}" Width="2*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
         </Grid>
 
     </Grid>

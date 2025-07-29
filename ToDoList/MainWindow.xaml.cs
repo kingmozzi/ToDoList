@@ -29,11 +29,17 @@ namespace ToDoList
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             //Exit
+            Close();
         }
 
         private void btnCalendar_Click(object sender, RoutedEventArgs e)
         {
             //Open Caledar Modal
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace ToDoList.Model
         public PriorityLevel Priority { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
+        public bool isDone { get; set; }
     }
 
     public enum PriorityLevel

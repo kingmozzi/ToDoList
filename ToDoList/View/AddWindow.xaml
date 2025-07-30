@@ -13,11 +13,68 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Category"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Category" FontSize="20"/>
+            <ComboBox Grid.Column="1" ItemsSource="{Binding CategoryItems}"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="일정" FontSize="20"/>
+            <TextBox Grid.Column="1"/>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="제목" FontSize="20"/>
+            <TextBox Grid.Column="1"/>
+        </Grid>
+        
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="우선순위" FontSize="20"/>
+            <TextBox Grid.Column="1"/>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <TextBlock Text="메모" FontSize="20"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <TextBox/>
+        </Grid>
+        
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnOK" Content="OK" Click="btnOK_Click"/>
+            <Button x:Name="btnCancel" Grid.Column="1" Content="Cancel" Click="btnCancel_Click"/>
+        </Grid>
+
+
     </Grid>
 </Window>

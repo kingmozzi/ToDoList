@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoList.View;
 
 namespace ToDoList
 {
@@ -18,12 +19,15 @@ namespace ToDoList
     {
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             //Open Add Modal
+            AddWindow addWindow = new AddWindow();
+            addWindow.ShowDialog();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)

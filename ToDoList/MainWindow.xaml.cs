@@ -19,8 +19,8 @@ namespace ToDoList
     {
         public MainWindow()
         {
-            DataContext = this;
             InitializeComponent();
+            DataContext = this;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -39,6 +39,8 @@ namespace ToDoList
         private void btnCalendar_Click(object sender, RoutedEventArgs e)
         {
             //Open Caledar Modal
+            CalendarWindow calendarWindow = new CalendarWindow();
+            calendarWindow.ShowDialog();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

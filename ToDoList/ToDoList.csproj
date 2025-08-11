@@ -9,8 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\" />
-    <Folder Include="ViewModel\" />
     <Folder Include="View\Common\" />
   </ItemGroup>
 

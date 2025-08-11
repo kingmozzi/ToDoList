@@ -43,15 +43,20 @@
             
             <TextBlock Grid.Row="0" Text="Today" FontSize="20"/>
 
-            <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" SelectedItem ="{Binding SelectedItem}" CanUserAddRows="False"
-                      CanUserDeleteRows="False" AutoGenerateColumns="False">
+            <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" 
+                      SelectedItem ="{Binding SelectedItem}" 
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False" 
+                      AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="4*"/>
                     <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="2*"/>
-                    <DataGridTextColumn Header="Priority" Binding="{Binding Prioritye}" Width="2*"/>
+                    <DataGridComboBoxColumn Header="Priority" SelectedItemBinding="{Binding Priority}" Width="2*"/>
                     <DataGridTextColumn Header="is done?" Binding="{Binding is_done}" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
+            
+            
 
         </Grid>
 
